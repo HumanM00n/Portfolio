@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" href="media/unnamed.png">
+    <title>Contact</title>
+</head>
+
+<body>
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------- */ -->
+    <!-- PARTIE DU HAUT DE LA PAGE -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------- */ -->
+
+    <!-- BARRE DE NAVIGATION -->
+    <header class="header">
+        <a href="#" class="logo">Mathis.</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="./AboutMe.html">About me</a>
+            <a href="https://webitechparis.com/filiere-informatique/bts-sio-slam/">School</a>
+            <div class="dropdown">
+                <a href="#">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="https://docs.google.com/presentation/d/1156pOcbqu959uQopWHKh6XZf1CHQvdjlqzzYgIXxxfs/edit#slide=id.g1d54cf815cc_0_224">Formation</a>
+                    <a href="">Professionnel</a>
+                    <a href="../Web-Porfolio/CarteDeVisite.html">Personal</a>
+                </div>
+            </div>
+            <a href="Technology.html">Technology Watch</a>
+        </nav>
+    </header>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------- */ -->
+    <!-- PARTIE CORPS DE LA PAGE    -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------- */ -->
+
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>PRENDRE CONTACT</h3>
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="email" id="email" placeholder="Votre mail" required>
+            <input type="text" id="téléphone" placeholder="Votre no." required>
+            <textarea id="Message" rows="4" placeholder="Comment puis-je vous aider ?"></textarea>
+            <button type="submit">Envoyé</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "mrouy92@gmail.com",
+                Password: "XVsikn92",
+                To: 'xvs.ikn92@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "Test envoie de mail",
+                Body: "Salam roja"
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
+</body>
+
+</html>
